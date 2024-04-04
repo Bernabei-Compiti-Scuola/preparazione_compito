@@ -12,32 +12,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Document</title>
 </head>
 <body>
-    <?php
-        session_start();
-        if ($_SESSION['log']== false) 
-        {
-            $_SESSION['status'] = "Devi fare il login per accedere a questa pagina";
-            header("Location: ..\index.php");
-        }
-    ?>
     <div class="row">
         <div class="card mx-auto my-5" style="width: 18rem; border-color: blue; border-style: solid;" >
             <div class="card-body text-center" >
-            <h5 class="card-title">Inserisci attore</h5>
-            <form method="POST" action="../script_php/inserisci_att.php">
-                Nome: <br>
-                <input type="text" name="nome" class="form-control" required placeholder="Mario"><br>
-        
-                Anno di nascita: <br>
-                <input type="number" name="annonascita" class="form-control" required placeholder="1960"><br>
-        
-                Nazionalità: <br>
-                <input type="text" name="nazionalita" class="form-control" required placeholder="italia">
-                <hr>
-                <input type="submit" class="btn btn-primary"  required value="Inserisci">
+            
+            <h5 class="card-title">Quanti attori vuoi visualizzare</h5>
+            <form method="GET" action="visualizza_att.php">
+                
+                <input type="number" name="n" class="form-control">
+                <br>
+                <input type="submit" class="btn btn-primary"  required value="Visualizza">
             </form>
             </div>
         </div>

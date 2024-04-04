@@ -1,8 +1,4 @@
-td, tr, table, th
-{
-    padding: 10px;
-    border: 2px solid blue;
-}
+
 .flex {max-width: 100%}
 
 div,h1,form,p,table,td,tr,th{
