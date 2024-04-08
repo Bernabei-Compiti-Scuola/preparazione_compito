@@ -1,6 +1,14 @@
 <?php
     require_once("connessione.php");
     $num=$_GET['n'];
+    $sql="SELECT Count(*) as num_attori FROM attori";
+    $rs=$conn->query($sql);
+    $tot=$rs->fetch_assoc();
+    if($num>$tot['num_attori'])
+    {
+        echo "Numero di attori richiesti maggiore del numero di attori presenti nel database, verranno visualizzati".$tot['num_attori']-5."attori<br>"
+        $num=$tot['num_attori']-5;
+    }
     $sql="SELECT CodAttore,Nome FROM attori ORDER BY Nome LIMIT $num";
     $rs=$conn->query($sql);
     if($num<1)
